@@ -1,0 +1,59 @@
+<html>
+<head>
+  <script src="https://cdn.plot.ly/plotly-1.2.0.min.js"></script>
+</head>
+<body>
+
+ <div id="myDiv" style="width: 480px; height: 400px;"><!-- Plotly chart will be drawn inside this DIV --></div>
+
+<script>
+ 
+ var rows = ['10-1-2016', '10-2-2016', '10-3-2016', '10-4-2016','10-5-2016', '10-6-2016', '10-7-2016', '10-8-2016'];
+
+ var trace1 = {
+    x: rows,
+    y: [100, 100, 100, 100,100, 100, 100, 100],
+    mode: 'lines',
+    name: 'high',
+    line: {
+        color: 'grey',
+        width: 1
+    }
+ };
+
+ var trace2 = {
+    x: rows,
+    y: [12, 9, -15, 12, 50, -29, -15, 35],
+    mode: 'lines+markers',
+    name: 'med'
+ };
+
+ var trace3 = {
+    x: rows,
+    y: [-100, -100, -100, -100, -100, -100, -100, -100],
+    mode: 'lines',
+    name: 'low',
+    line: {
+        color: 'grey',
+        width: 1
+    }
+ };
+
+ var data = [ trace1, trace2, trace3 ];
+
+ var layout = {
+   title: 'The test graph',
+   xaxis: {
+     title: 'time'
+   },
+   yaxis: {
+     title: 'variance'
+   }
+ };
+
+ Plotly.newPlot('myDiv', data, layout);
+ 
+</script>
+    
+</body>
+</html>
